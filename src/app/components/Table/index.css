@@ -1,0 +1,75 @@
+.user-table {
+  width: 100%;
+  max-width: 1200px;
+  border-collapse: collapse;
+  margin: 20px 0;
+  margin-left: 70px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Обрезаем углы */
+  backdrop-filter: blur(10px); /* Эффект размытия */
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.user-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-table tr {
+  transition: background-color 0.3s ease; /* Плавный переход для строк */
+}
+
+.user-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Эффект при наведении */
+}
+
+.user-table td {
+  background-color: #fff; /* Фон ячеек */
+}
+
+.user-table td:nth-child(even) {
+  background-color: #f9f9f9; /* Чередование фона для четных строк */
+}
+
+.user-table td[colspan] {
+  text-align: center; /* Центрируем текст в ячейках с colspan */
+  font-weight: bold; /* Жирный текст для сообщения об отсутствии пользователей */
+}
+
+@media (max-width: 1200px) {
+  .user-table {
+    margin-left: 20px; /* Уменьшаем отступ слева на меньших экранах */
+  }
+}
+
+@media (max-width: 768px) {
+  .user-table {
+    margin-left: 10px; /* Уменьшаем отступ слева еще больше */
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 6px; /* Уменьшаем отступы в ячейках */
+  }
+}
+
+@media (max-width: 480px) {
+  .user-table {
+    margin-left: 0; /* Убираем отступ слева на мобильных устройствах */
+    font-size: 14px; /* Уменьшаем размер шрифта для мобильных устройств */
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 4px; /* Уменьшаем отступы в ячейках */
+  }
+}

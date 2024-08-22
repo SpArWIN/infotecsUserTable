@@ -1,0 +1,22 @@
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 20px 0;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 2px solid gray;
+}
+.search-input.active {
+    border: 2px solid green; /* Цвет границы при активном состоянии */
+}
+@media (max-width: 768px) {
+    .search-input{
+        max-width: 100%;
+        margin-left: 0;
+        padding: 8px;
+        font-size: 14px;
+    }
+}

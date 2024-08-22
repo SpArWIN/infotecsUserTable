@@ -1,0 +1,45 @@
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.flex-container {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  padding: 26px;
+  margin-left: 10px;
+  border-radius: 10px;
+  width: 210px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 3, 0.4);
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.flex-container:hover {
+  transform: scale(1.06);
+  box-shadow: 0 4px 8px rgba(0, 2, 3, 0.8);
+}
+
+/* Для Select компонента появления*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(-20px); /* Начальная позиция немного выше */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Плавный переход */
+}
+
+.fade-in-active {
+  opacity: 1;
+  transform: translateY(0); /* Конечная позиция */
+}

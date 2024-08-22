@@ -1,0 +1,72 @@
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 20px;
+}
+
+.toggle-switch-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 24px;
+  padding: 0;
+  background: #ccc; /* Цвет фона при выключенном состоянии */
+  border-radius: 34px;
+  position: relative; /* Для позиционирования внутреннего переключателя */
+}
+
+.toggle-switch-label:before {
+  content: '';
+  display: block;
+  width: 24px; 
+  height: 24px; 
+  background: #ffffff; 
+  border-radius: 50%; 
+  border: 2px solid #da8403; 
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  transition: transform 0.3s ease, background 0.3s ease; /* Плавный переход */
+}
+
+.toggle-switch-inner {
+  display: none;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label {
+  background: #007bff; /* Цвет фона при включенном состоянии */
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label:before {
+  transform: translateX(36px); 
+  background: #ffc400; 
+}
+
+
+@media (max-width: 768px) {
+  .toggle-switch {
+    width: 50px; 
+    height: 28px; 
+  }
+
+  .toggle-switch-label {
+    height: 20px; 
+  }
+
+  .toggle-switch-label:before {
+    width: 20px; 
+    height: 20px; 
+  }
+
+  .toggle-switch-checkbox:checked + .toggle-switch-label:before {
+    transform: translateX(22px); 
+  }
+}
