@@ -16,10 +16,10 @@ export const Home: React.FC = () => {
   const [selectedField, setSelectedField] = useState("firstName"); //Состояние для точечного поиска
 
   const handleToggle = (state: boolean) => {
-    setToggleState(state); //Переключатель 
+    setToggleState(state); //Переключатель
   };
   const handleFieldChange = (value: string) => {
-    setSelectedField(value); //Что выбрано из Select 
+    setSelectedField(value); //Что выбрано из Select
   };
   useEffect(() => {
     const fetchUser = async () => {
@@ -31,6 +31,7 @@ export const Home: React.FC = () => {
       } catch (error: any) {
         console.error(error.message);
         setError("Ошибка загрузки пользователей");
+        setFilterUser([]);
       }
     };
     fetchUser();
@@ -61,7 +62,13 @@ export const Home: React.FC = () => {
           String(value).toLowerCase().includes(term.toLowerCase())
         );
       });
-      setFilterUser(filteredUsers);
+      //Если нет совпадений
+      if (filteredUsers.length === 0) {
+        setError("Нет пользователей, удовлетворяющих критериям");
+        setFilterUser([]);
+      } else {
+        setFilterUser(filteredUsers);
+      }
     }
   };
 
@@ -94,7 +101,6 @@ export const Home: React.FC = () => {
           currentToggleState={toggleState}
           value={searchItem}
           onSearch={handleSearch}
-       
         />
         <UserTable users={filterUser} error={error} />
       </div>

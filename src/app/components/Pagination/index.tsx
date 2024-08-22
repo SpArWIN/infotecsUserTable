@@ -9,11 +9,12 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
+  const  isNoPage = totalPages ===0;
   return (
     <div className="pagination">
       <button
         onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
-        disabled={currentPage === 1}
+        disabled={currentPage === 1  || isNoPage}
         className="pagination-button"
       >
         Назад
@@ -23,7 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({
       </span>
       <button
         onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
-        disabled={currentPage === totalPages}
+        disabled={currentPage === totalPages || isNoPage }
         className="pagination-button"
       >
         Вперед
